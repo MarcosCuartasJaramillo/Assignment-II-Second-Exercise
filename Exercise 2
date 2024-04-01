@@ -1,0 +1,36 @@
+allData = { # dictionary of values for countries
+    'US': {'pop':325.7, 'gdp': 19.39, 'ccy': 'USD', 'fx':  1.0},
+    'CA': {'pop': 36.5, 'gdp':  1.65, 'ccy': 'CAD', 'fx':  1.35},
+    'MX': {'pop':129.2, 'gdp':  1.15, 'ccy': 'MXN', 'fx': 19.68}
+    }
+
+while True:
+  countrycode=input('Enter country code (US, CA, or MX): ')
+  if countrycode=='exit':
+    break
+  if countrycode not in allData.keys():
+    continue
+  
+  stat=input('Enter country stat (pop, gdp, ccy, or fx): ')
+  if stat=='exit':
+    break
+  if stat not in allData[countrycode].keys():
+    continue
+
+
+  if stat== 'pop':
+      print(f'{countrycode} Population: {allData[countrycode][stat]} million people')
+  elif stat== 'gdp':
+      print(f' {countrycode} GDP: {allData[countrycode][stat]} trillion')
+  elif stat== 'ccy':
+      print(f'{countrycode} Currency: {allData[countrycode][stat]}')
+  else:
+      print(f'{countrycode}FX: {allData[countrycode][stat]} exchange rate')
+
+
+
+
+
+
+
+
